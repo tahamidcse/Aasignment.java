@@ -1,3 +1,79 @@
+/*
+this is the super class which contains the deposit and withdraw abstract methods  of account.
+*/
+abstract class BankAccount
+{
+     double balance;
+    
+
+    public BankAccount()
+    {
+        balance = 0;
+        
+    }
+
+    public BankAccount(double initialBalance)
+    {
+        balance = initialBalance;
+        
+    }
+
+public abstract void deposit(double amount);
+public abstract void withdraw(double amount);
+public abstract double getBalance();
+    
+
+}
+
+/*
+this is subclass of Bank Account
+
+*/
+public class BasicAccount extends BankAccount
+{
+    /*
+     * this method will be called when you deposit your money
+    */
+    public  void deposit(double amount)
+    {
+        balance = balance + amount;
+    }
+    
+    /*
+     * this method will be called when you withdraw your money
+    */
+    
+    public  void withdraw(double amount)
+    {
+        if(amount<=balance) {
+        balance = balance - amount;}
+        else
+        { System.out.println("Sorry! You can't Withdraw:");
+        }
+    }
+    /*
+     * this method will be called when you check your balance
+    */
+    
+    public double getBalance()
+    {
+        return balance;
+    }
+    public static void main(String[] args)
+    {
+        BasicAccount account=new BasicAccount();
+        account.deposit(1000);
+        account.withdraw(250);
+        account.deposit(400);
+        
+    
+        System.out.println(account.getBalance());
+        account.withdraw(5000);
+        
+    System.out.println(account.getBalance());
+    }
+    
+}
 # Aasignment.java
 //define a class Geometry
 
